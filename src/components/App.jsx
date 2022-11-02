@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import { AiFillLike, AiFillMeh, AiFillDislike } from 'react-icons/ai';
 import { Button } from './Button';
@@ -27,13 +27,17 @@ export class App extends Component {
   };
 
   addGood = () => {
-    this.setState(prevState => {
-      return {
-        good: prevState.value + 1,
-      };
-    });
-    //  this.setState(prevState => ({ good: prevState.good + 1 }));
+    this.setState({ good: 10 });
   };
+
+  // addGood = () => {
+  //   this.setState(prevState => {
+  //     return {
+  //       good: prevState.value + 1,
+  //     };
+  //   });
+  //    this.setState(prevState => ({ good: prevState.good + 1 }));
+  // };
   addNeutral = () => {
     //  this.setState(prevState => ({ neutral: prevState.neutral + 1 }));
   };
@@ -49,7 +53,12 @@ export class App extends Component {
         </Box>
 
         <Box display="flex" justifyContent="center" gap="20px" as="section">
-          <Button icon={AiFillLike} onClick={this.addGood}>
+          <Button
+            icon={AiFillLike}
+            onClick={evt => {
+              console.log('клік по кнопці', evt);
+            }}
+          >
             Good
           </Button>
           <Button icon={AiFillMeh} onClick={this.addNeutral}>
