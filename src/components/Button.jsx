@@ -15,7 +15,7 @@ const StyledButton = styled.button`
     return p.disabled ? p.theme.colors.muted : p.theme.colors.primary;
   }};
   color: ${p => p.theme.colors.white};
-  cursor: pointer;
+  /* cursor: pointer; */
 
   :hover:not(:disabled),
   :focus:not(:disabled) {
