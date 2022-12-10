@@ -1,19 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Box } from '../Box';
+import PropTypes from 'prop-types';
 
-const HeaderPart = styled.h2`
-  color: ${p => p.theme.colors.accent};
-  font-family: ${p => p.theme.fonts.body};
-  font-size: ${p => p.theme.fontSizes.m};
-  padding-top: ${p => p.theme.space[2]}px;
-  padding-bottom: ${p => p.theme.space[2]}px;
-`;
+const Notification = ({ message }) => <p>{message}</p>;
 
-const Notification = ({ children }) => (
-  <Box display="flex" justifyContent="center">
-    <HeaderPart>{children}</HeaderPart>
-  </Box>
-);
-
+Notification.propTypes = {
+  message: PropTypes.string.isRequired,
+};
 export default Notification;

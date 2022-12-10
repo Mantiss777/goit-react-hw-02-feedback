@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 8px 15px;
+  cursor: pointer;
+  text-transform: lowercase;
+}
+
+.btn::first-letter {
+  text-transform: uppercase;
+}

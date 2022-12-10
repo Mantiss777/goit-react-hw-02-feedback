@@ -1,30 +1,26 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Box } from '../Box';
+import PropTypes from 'prop-types';
+import css from './Section.module.css';
 
-const Header = styled.h1`
-  color: ${p => p.theme.colors.accent};
-  font-family: ${p => p.theme.fonts.body};
-  font-size: ${p => p.theme.fontSizes.l};
-  padding-top: ${p => p.theme.space[2]}px;
-  padding-bottom: ${p => p.theme.space[2]}px;
-`;
+const Section = ({ children, title }) => {
+  return (
+    <section className={css.container}>
+      <h3
+        style={{
+          textAlign: 'center',
+          alignSelf: 'stretch',
+          marginBottom: 20,
+        }}
+      >
+        {title}
+      </h3>
+      <div>{children}</div>
+    </section>
+  );
+};
 
-const HeaderPart = styled.h2`
-  color: ${p => p.theme.colors.accent};
-  font-family: ${p => p.theme.fonts.body};
-  font-size: ${p => p.theme.fontSizes.m};
-  padding-top: ${p => p.theme.space[2]}px;
-  padding-bottom: ${p => p.theme.space[2]}px;
-`;
-
-const Section = ({ children }) => (
-  <Box display="flex" justifyContent="center" mt={2} as="section">
-    <Header>{children}</Header>
-  </Box>
-);
+Section.propTypes = {
+  title: PropTypes.string.isRequired,
+};
 
 export default Section;
-<Box display="flex" justifyContent="center">
-  <HeaderPart>Statistics</HeaderPart>
-</Box>;

@@ -1,14 +1,8 @@
 import React from 'react';
-import { Box } from '../Box';
+import PropTypes from 'prop-types';
 
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => (
-  <Box
-    display="flex"
-    justifyContent="center"
-    alignItems="center"
-    flexDirection="column"
-    as="section"
-  >
+  <>
     <p>
       Good:
       <samp>{good}</samp>
@@ -29,7 +23,15 @@ const Statistics = ({ good, neutral, bad, total, positivePercentage }) => (
       Positive feedbeck:
       <samp>{positivePercentage}%</samp>
     </p>
-  </Box>
+  </>
 );
+
+Statistics.propTypes = {
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
+};
 
 export default Statistics;
